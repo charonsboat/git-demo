@@ -1,0 +1,24 @@
+{
+  "name": "@drm2/paircolumbus-twitterbot",
+  "version": "0.0.1",
+  "description": "A bot built during the Pair Columbus (10/08/16) event.",
+  "main": "index.js",
+  "dependencies": {
+    "dotenv": "^2.0.0",
+    "twit": "^2.2.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drm2/paircolumbus-twitterbot.git"
+  },
+  "author": "David R. Myers II <davidrmyersii@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/drm2/paircolumbus-twitterbot/issues"
+  },
+  "homepage": "https://github.com/drm2/paircolumbus-twitterbot#readme"
+}

@@ -37,18 +37,10 @@ var TwitterBot = function (options)
      */
     this.scheduleTweet = function (content, schedule)
     {
-        return new Promise(function (resolve, reject, onCancel)
+        return this.schedule(function ()
         {
-            var job = Schedule.scheduleJob(schedule, function ()
-            {
-                resolve(self.tweet(content));
-            });
-
-            onCancel(function ()
-            {
-                job.cancel();
-            });
-        });
+            return self.tweet(content);
+        }, schedule);
     };
 
     this.deleteTweet = function (id)

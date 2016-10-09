@@ -27,6 +27,21 @@ var TwitterBot = function (options)
     };
 
     /*
+     * [TwitterBot].readTweet
+     *
+     * Reads a Tweet with the given id if it exists.
+     *
+     * @param id string
+     * @return Promise
+     */
+    this.readTweet = function (id)
+    {
+        var promise = twit.get('statuses/show/:id', { id: id });
+
+        return promise;
+    };
+
+    /*
      * [TwitterBot].deleteTweet
      *
      * Removes a Tweet with the given id if it exists.

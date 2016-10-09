@@ -13,43 +13,18 @@ var bot = new TwitterBot({
 });
 
 
-// test for [TwitterBot].tweet
-// bot.tweet('[bot test] immediate tweet.')
+// test for [TwitterBot].scheduleTweet
+// var handler = bot.scheduleTweet('[bot test] delayed tweet (5 seconds).', new Date((new Date()).getTime() + (5 * 1000)))
 //     .then(function (result) {
 //         console.log('Data: ', result.data);
 //     })
 //     .catch(function (error) {
 //         console.log('Error: ', error);
 //     });
-
-
-// test for [TwitterBot].scheduleTweet
-var handler = bot.scheduleTweet('[bot test] delayed tweet (5 seconds).', new Date((new Date()).getTime() + (5 * 1000)))
-    .then(function (result) {
-        console.log('Data: ', result.data);
-    })
-    .catch(function (error) {
-        console.log('Error: ', error);
-    });
 //
 // setTimeout(function() {
 //     handler.cancel();
 // }, 8000);
-
-
-// test for [TwitterBot].deleteTweet
-// we have to create a tweet to get the id and delete it
-// bot.tweet('[bot test] this tweet will automatically be deleted immediately.')
-//     .then(function (result) {
-//         console.log('Created Tweet: ', result.data);
-//         return bot.deleteTweet(result.data.id_str);
-//     })
-//     .then(function (result) {
-//         console.log('Deleted Tweet: ', result.data);
-//     })
-//     .catch(function (error) {
-//         console.log('Error: ', error);
-//     });
 
 
 // test for [TwitterBot].schedule

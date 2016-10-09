@@ -13,20 +13,6 @@ var bot = new TwitterBot({
 });
 
 
-// test for [TwitterBot].scheduleTweet
-// var handler = bot.scheduleTweet('[bot test] delayed tweet (5 seconds).', new Date((new Date()).getTime() + (5 * 1000)))
-//     .then(function (result) {
-//         console.log('Data: ', result.data);
-//     })
-//     .catch(function (error) {
-//         console.log('Error: ', error);
-//     });
-//
-// setTimeout(function() {
-//     handler.cancel();
-// }, 8000);
-
-
 // test for [TwitterBot].schedule
 // returning the resolver to chain onto the scheduler (useful for action chaining)
 // var handler = bot.schedule(function () {

@@ -27,22 +27,13 @@ var TwitterBot = function (options)
     };
 
     /*
-     * [TwitterBot].scheduleTweet
+     * [TwitterBot].deleteTweet
      *
-     * Tweets the passed message at the specified date/time.
+     * Removes a Tweet with the given id if it exists.
      *
-     * @param content string
-     * @param schedule string|Date
+     * @param id string
      * @return Promise
      */
-    this.scheduleTweet = function (content, schedule)
-    {
-        return this.schedule(function ()
-        {
-            return self.tweet(content);
-        }, schedule);
-    };
-
     this.deleteTweet = function (id)
     {
         var promise = twit.post('statuses/destroy/:id', { id: id });
@@ -50,6 +41,15 @@ var TwitterBot = function (options)
         return promise;
     };
 
+    /*
+     * [TwitterBot].schedule
+     *
+     * Fires the given action on the given schedule/date/time.
+     *
+     * @param action function
+     * @param schedule string|Date
+     * @return Promise
+     */
     this.schedule = function (action, schedule)
     {
         return new Promise(function (resolve, reject, onCancel)

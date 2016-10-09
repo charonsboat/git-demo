@@ -4,7 +4,9 @@
   "description": "A bot built during the Pair Columbus (10/08/16) event.",
   "main": "index.js",
   "dependencies": {
+    "bluebird": "^3.4.6",
     "dotenv": "^2.0.0",
+    "node-schedule": "^1.1.1",
     "twit": "^2.2.5"
   },
   "devDependencies": {},

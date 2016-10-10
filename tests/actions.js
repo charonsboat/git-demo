@@ -91,4 +91,27 @@ describe('[TwitterBot].[Actions]', function ()
                 done();
             });
     });
+
+    it('[TwitterBot].undoRetweet() should remove a Retweet from Twitter.', function (done)
+    {
+        var message = 'Running [TwitterBot] tests. [TwitterBot].undoRetweet() should remove a Retweet from Twitter.';
+
+        bot.tweet(message)
+            .then(function (result) {
+                return bot.retweet(result.data.id_str);
+            })
+            .then(function (result) {
+                return bot.undoRetweet(result.data.retweeted_status.id_str);
+            })
+            .then(function (result) {
+                expect(result.data).to.exist;
+                expect(result.data.id_str).to.exist;
+                expect(result.data.text).to.equal(message);
+
+                return bot.deleteTweet(result.data.id_str);
+            })
+            .then(function () {
+                done();
+            });
+    });
 });

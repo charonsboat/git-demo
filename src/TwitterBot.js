@@ -72,6 +72,22 @@ var TwitterBot = function (options)
     };
 
     /*
+     * [TwitterBot].undoRetweet
+     *
+     * Removes the Retweet based on the given Tweet id. Accepts either the
+     * Retweet id or the original Tweet id.
+     *
+     * @param id string
+     * @return Promise
+     */
+    this.undoRetweet = function (id)
+    {
+        var promise = twit.post('statuses/unretweet/:id', { id: id });
+
+        return promise;
+    };
+
+    /*
      * [TwitterBot].schedule
      *
      * Fires the given action on the given schedule/date/time.

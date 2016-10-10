@@ -33,13 +33,13 @@ describe('[TwitterBot].[Actions]', function ()
             });
     });
 
-    it('[TwitterBot].readTweet() should read a Tweet from Twitter.', function (done)
+    it('[TwitterBot].getTweet() should read a Tweet from Twitter.', function (done)
     {
-        var message = 'Running [TwitterBot] tests. [TwitterBot].readTweet() should read a Tweet from Twitter.';
+        var message = 'Running [TwitterBot] tests. [TwitterBot].getTweet() should read a Tweet from Twitter.';
 
         bot.tweet(message)
             .then(function (result) {
-                return bot.readTweet(result.data.id_str);
+                return bot.getTweet(result.data.id_str);
             })
             .then(function (result) {
                 expect(result.data).to.exist;

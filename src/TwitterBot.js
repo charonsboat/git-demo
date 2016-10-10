@@ -27,14 +27,14 @@ var TwitterBot = function (options)
     };
 
     /*
-     * [TwitterBot].readTweet
+     * [TwitterBot].getTweet
      *
      * Reads a Tweet with the given id if it exists.
      *
      * @param id string
      * @return Promise
      */
-    this.readTweet = function (id)
+    this.getTweet = function (id)
     {
         var promise = twit.get('statuses/show/:id', { id: id });
 

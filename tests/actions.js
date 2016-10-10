@@ -33,23 +33,6 @@ describe('[TwitterBot].[Actions]', function ()
             });
     });
 
-    it('[TwitterBot].deleteTweet() should remove a Tweet from Twitter.', function (done)
-    {
-        var message = 'Running [TwitterBot] tests. [TwitterBot].deleteTweet() should remove a Tweet from Twitter.';
-
-        bot.tweet(message)
-            .then(function (result) {
-                return bot.deleteTweet(result.data.id_str);
-            })
-            .then(function (result) {
-                expect(result.data).to.exist;
-                expect(result.data.id_str).to.exist;
-                expect(result.data.text).to.equal(message);
-
-                done();
-            });
-    });
-
     it('[TwitterBot].readTweet() should read a Tweet from Twitter.', function (done)
     {
         var message = 'Running [TwitterBot] tests. [TwitterBot].readTweet() should read a Tweet from Twitter.';
@@ -67,6 +50,23 @@ describe('[TwitterBot].[Actions]', function ()
                 return bot.deleteTweet(result.data.id_str);
             })
             .then(function () {
+                done();
+            });
+    });
+
+    it('[TwitterBot].deleteTweet() should remove a Tweet from Twitter.', function (done)
+    {
+        var message = 'Running [TwitterBot] tests. [TwitterBot].deleteTweet() should remove a Tweet from Twitter.';
+
+        bot.tweet(message)
+            .then(function (result) {
+                return bot.deleteTweet(result.data.id_str);
+            })
+            .then(function (result) {
+                expect(result.data).to.exist;
+                expect(result.data.id_str).to.exist;
+                expect(result.data.text).to.equal(message);
+
                 done();
             });
     });

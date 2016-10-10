@@ -85,7 +85,7 @@ describe('[TwitterBot].[Actions]', function ()
                 expect(result.data.user.screen_name).to.exist;
                 expect(result.data.text).to.equal('RT @' + result.data.user.screen_name + ': ' + message);
 
-                return bot.deleteTweet(result.data.id_str);
+                return bot.deleteTweet(result.data.retweeted_status.id_str);
             })
             .then(function () {
                 done();

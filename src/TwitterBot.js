@@ -57,6 +57,21 @@ var TwitterBot = function (options)
     };
 
     /*
+     * [TwitterBot].retweet
+     *
+     * Retweets a Tweet with the given id if it hasn't already been retweeted.
+     *
+     * @param id string
+     * @return Promise
+     */
+    this.retweet = function (id)
+    {
+        var promise = twit.post('statuses/retweet/:id', { id: id });
+
+        return promise;
+    };
+
+    /*
      * [TwitterBot].schedule
      *
      * Fires the given action on the given schedule/date/time.

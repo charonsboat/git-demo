@@ -70,4 +70,25 @@ describe('[TwitterBot].[Actions]', function ()
                 done();
             });
     });
+
+    it('[TwitterBot].retweet() should retweet a Tweet from Twitter.', function (done)
+    {
+        var message = 'Running [TwitterBot] tests. [TwitterBot].retweet() should retweet a Tweet from Twitter.';
+
+        bot.tweet(message)
+            .then(function (result) {
+                return bot.retweet(result.data.id_str);
+            })
+            .then(function (result) {
+                expect(result.data).to.exist;
+                expect(result.data.id_str).to.exist;
+                expect(result.data.user.screen_name).to.exist;
+                expect(result.data.text).to.equal('RT @' + result.data.user.screen_name + ': ' + message);
+
+                return bot.deleteTweet(result.data.id_str);
+            })
+            .then(function () {
+                done();
+            });
+    });
 });

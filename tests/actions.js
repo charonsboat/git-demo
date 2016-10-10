@@ -26,7 +26,7 @@ describe('[TwitterBot].[Actions]', function ()
                 expect(result.data.text).to.equal(message);
 
                 // clean up
-                return bot.deleteTweet(result.data.id_str);
+                return bot.removeTweet(result.data.id_str);
             })
             .then(function () {
                 done();
@@ -47,20 +47,20 @@ describe('[TwitterBot].[Actions]', function ()
                 expect(result.data.text).to.equal(message);
 
                 // clean up
-                return bot.deleteTweet(result.data.id_str);
+                return bot.removeTweet(result.data.id_str);
             })
             .then(function () {
                 done();
             });
     });
 
-    it('[TwitterBot].deleteTweet() should remove a Tweet from Twitter.', function (done)
+    it('[TwitterBot].removeTweet() should remove a Tweet from Twitter.', function (done)
     {
-        var message = 'Running [TwitterBot] tests. [TwitterBot].deleteTweet() should remove a Tweet from Twitter.';
+        var message = 'Running [TwitterBot] tests. [TwitterBot].removeTweet() should remove a Tweet from Twitter.';
 
         bot.tweet(message)
             .then(function (result) {
-                return bot.deleteTweet(result.data.id_str);
+                return bot.removeTweet(result.data.id_str);
             })
             .then(function (result) {
                 expect(result.data).to.exist;
@@ -85,7 +85,7 @@ describe('[TwitterBot].[Actions]', function ()
                 expect(result.data.user.screen_name).to.exist;
                 expect(result.data.text).to.equal('RT @' + result.data.user.screen_name + ': ' + message);
 
-                return bot.deleteTweet(result.data.retweeted_status.id_str);
+                return bot.removeTweet(result.data.retweeted_status.id_str);
             })
             .then(function () {
                 done();
@@ -108,7 +108,7 @@ describe('[TwitterBot].[Actions]', function ()
                 expect(result.data.id_str).to.exist;
                 expect(result.data.text).to.equal(message);
 
-                return bot.deleteTweet(result.data.id_str);
+                return bot.removeTweet(result.data.id_str);
             })
             .then(function () {
                 done();

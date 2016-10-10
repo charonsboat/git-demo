@@ -42,14 +42,14 @@ var TwitterBot = function (options)
     };
 
     /*
-     * [TwitterBot].deleteTweet
+     * [TwitterBot].removeTweet
      *
      * Removes a Tweet with the given id if it exists.
      *
      * @param id string
      * @return Promise
      */
-    this.deleteTweet = function (id)
+    this.removeTweet = function (id)
     {
         var promise = twit.post('statuses/destroy/:id', { id: id });
 

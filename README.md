@@ -129,3 +129,13 @@ bot.removeTweet('IdOfTheTweetYouWantToRemove')
         console.log('Response:', result.resp);
     });
 ```
+
+#### References
+
+Twit
+
+- [Twit.post()](https://github.com/ttezel/twit/blob/master/README.md#tpostpath-params-callback)
+
+Twitter
+
+- [POST statuses/destroy/:id](https://dev.twitter.com/rest/reference/post/statuses/destroy/%3Aid)

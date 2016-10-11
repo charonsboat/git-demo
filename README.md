@@ -22,6 +22,8 @@ npm install @drm2/twitterbot --save
 
 TwitterBot is built on top of Twit, so it is initialized the same way.
 
+#### Example
+
 ```javascript
 var TwitterBot = require('@drm2/twitterbot');
 
@@ -34,6 +36,16 @@ var options = {
 
 var bot = new TwitterBot(options);
 ```
+
+#### References
+
+Twit
+
+- [Initialization](https://github.com/ttezel/twit/blob/master/README.md#var-t--new-twitconfig)
+
+Twitter
+
+- [Authentication and Authorization](https://dev.twitter.com/oauth/overview/application-owner-access-tokens)
 
 ### `[TwitterBot].tweet(message)`
 

@@ -170,3 +170,34 @@ Twit
 Twitter
 
 - [POST statuses/retweet/:id](https://dev.twitter.com/rest/reference/post/statuses/retweet/%3Aid)
+
+### `[TwitterBot].undoRetweet(id)`
+
+Removes the Retweet based on the given Tweet id.
+
+#### id: string
+
+The id of the original Tweet (can also be the Retweet id).
+
+#### Example
+
+```javascript
+bot.undoRetweet('IdOfTheOriginalTweetOrTheRetweet')
+    .catch(function (error) {
+        console.log('Error:', error);
+    })
+    .then(function (result) {
+        console.log('Data:', result.data);
+        console.log('Response:', result.resp);
+    });
+```
+
+#### References
+
+Twit
+
+- [Twit.post()](https://github.com/ttezel/twit/blob/master/README.md#tpostpath-params-callback)
+
+Twitter
+
+- [POST statuses/unretweet/:id](https://dev.twitter.com/rest/reference/post/statuses/unretweet/%3Aid)

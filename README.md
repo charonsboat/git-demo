@@ -99,6 +99,16 @@ bot.getTweet('IdOfTheTweetYouWantToRetrieve')
     });
 ```
 
+#### References
+
+Twit
+
+- [Twit.get()](https://github.com/ttezel/twit/blob/master/README.md#tgetpath-params-callback)
+
+Twitter
+
+- [GET statuses/show/:id](https://dev.twitter.com/rest/reference/get/statuses/show/%3Aid)
+
 ### `[TwitterBot].removeTweet(id)`
 
 Removes a Tweet with the given id.

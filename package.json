@@ -1,8 +1,8 @@
 {
-  "name": "@drm2/paircolumbus-twitterbot",
-  "version": "0.0.1",
-  "description": "A bot built during the Pair Columbus (10/08/16) event.",
-  "main": "index.js",
+  "name": "@drm2/twitterbot",
+  "version": "v0.0.2",
+  "description": "A JavaScript/Node framework for building better Twitter bots. Built on Twit with full Promise support.",
+  "main": "src/TwitterBot.js",
   "dependencies": {
     "bluebird": "^3.4.6",
     "dotenv": "^2.0.0",

@@ -68,6 +68,16 @@ bot.tweet('Hello, World!')
     });
 ```
 
+#### References
+
+Twit
+
+- [Twit.post()](https://github.com/ttezel/twit/blob/master/README.md#tpostpath-params-callback)
+
+Twitter
+
+- [POST statuses/update](https://dev.twitter.com/rest/reference/post/statuses/update)
+
 ### `[TwitterBot].getTweet(id)`
 
 Retrieves a Tweet with the given id.

@@ -201,3 +201,35 @@ Twit
 Twitter
 
 - [POST statuses/unretweet/:id](https://dev.twitter.com/rest/reference/post/statuses/unretweet/%3Aid)
+
+### `[TwitterBot].schedule(action, schedule)`
+
+Runs the given action(s) based on the given schedule.
+
+#### action: function
+
+The action to run on the given schedule. Usually a function containing the logic to run TwitterBot actions.
+
+#### schedule: Date|string
+
+The Date object or CRON string used to define the schedule.
+
+#### Example
+
+```javascript
+// set our schedule for 30 seconds from now
+var schedule = new Date(Date.now() + (30 * 1000));
+
+var handler = bot.schedule(function () {
+    bot.tweet('Hello, World!');
+}, schedule);
+
+// if you want to cancel the action at any point before it runs, just use the handler
+handler.cancel();
+```
+
+#### References
+
+Node Schedule
+
+- [Jobs and Scheduling](https://github.com/node-schedule/node-schedule#jobs-and-scheduling)

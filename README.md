@@ -55,3 +55,24 @@ bot.tweet('Hello, World!')
         console.log('Response:', result.resp);
     });
 ```
+
+### `[TwitterBot].getTweet(id)`
+
+Retrieves a Tweet with the given id.
+
+#### id: string
+
+The id of the Tweet you want to retrieve.
+
+#### Example
+
+```javascript
+bot.getTweet('IdOfTheTweetYouWantToRetrieve')
+    .catch(function (error) {
+        console.log('Error:', error);
+    })
+    .then(function (result) {
+        console.log('Data:', result.data);
+        console.log('Response:', result.resp);
+    });
+```

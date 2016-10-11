@@ -139,3 +139,34 @@ Twit
 Twitter
 
 - [POST statuses/destroy/:id](https://dev.twitter.com/rest/reference/post/statuses/destroy/%3Aid)
+
+### `[TwitterBot].retweet(id)`
+
+Retweets a Tweet with the given id.
+
+#### id: string
+
+The id of the Tweet you want to retweet.
+
+#### Example
+
+```javascript
+bot.retweet('IdOfTheTweetYouWantToRetweet')
+    .catch(function (error) {
+        console.log('Error:', error);
+    })
+    .then(function (result) {
+        console.log('Data:', result.data);
+        console.log('Response:', result.resp);
+    });
+```
+
+#### References
+
+Twit
+
+- [Twit.post()](https://github.com/ttezel/twit/blob/master/README.md#tpostpath-params-callback)
+
+Twitter
+
+- [POST statuses/retweet/:id](https://dev.twitter.com/rest/reference/post/statuses/retweet/%3Aid)

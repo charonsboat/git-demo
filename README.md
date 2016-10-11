@@ -76,3 +76,24 @@ bot.getTweet('IdOfTheTweetYouWantToRetrieve')
         console.log('Response:', result.resp);
     });
 ```
+
+### `[TwitterBot].removeTweet(id)`
+
+Removes a Tweet with the given id.
+
+#### id: string
+
+The id of the Tweet you want to remove.
+
+#### Example
+
+```javascript
+bot.removeTweet('IdOfTheTweetYouWantToRemove')
+    .catch(function (error) {
+        console.log('Error:', error);
+    })
+    .then(function (result) {
+        console.log('Data:', result.data);
+        console.log('Response:', result.resp);
+    });
+```

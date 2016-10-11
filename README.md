@@ -2,7 +2,19 @@
 
 A JavaScript/Node framework for building better Twitter bots. Built on Twit with full Promise support.
 
+## Installation
+
+@drm2/twitterbot is available via NPM.
+
+```bash
+npm install @drm2/twitterbot --save
+```
+
 ## Features
+
+- REST API Access
+- Streaming API Access
+- Scheduling
 
 ## API
 
@@ -25,10 +37,21 @@ var bot = new TwitterBot(options);
 
 ### `[TwitterBot].tweet(message)`
 
-Posts a new Tweet on Twitter.
+Posts a new Tweet.
 
 #### message: string
 
 The status you want to post on Twitter.
 
 #### Example
+
+```javascript
+bot.tweet('Hello, World!')
+    .catch(function (error) {
+        console.log('Error:', error);
+    })
+    .then(function (result) {
+        console.log('Data:', result.data);
+        console.log('Response:', result.resp);
+    });
+```

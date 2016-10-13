@@ -233,3 +233,27 @@ handler.cancel();
 Node Schedule
 
 - [Jobs and Scheduling](https://github.com/node-schedule/node-schedule#jobs-and-scheduling)
+
+### `[TwitterBot].repeat(action, delay)`
+
+Repeats the given action(s) based on the given delay.
+
+#### action: function
+
+The action to run on every iteration. Usually a function containing the logic to run TwitterBot actions.
+
+#### delay: integer
+
+The delay time (in milliseconds) between each iteration.
+
+#### Example
+
+```javascript
+// Tweets 'Hello, World!' once every hour
+var handler = bot.repeat(function () {
+    bot.tweet('Hello, World!');
+}, (60 * 60 * 1000));
+
+// if you want to cancel the repeater at any point, just use the handler
+handler.cancel();
+```

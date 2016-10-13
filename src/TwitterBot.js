@@ -1,6 +1,7 @@
 var Twit = require('twit');
 var Schedule = require('node-schedule');
 var Promise = require('bluebird');
+var Interval = require('./Interval');
 
 Promise.config({
     cancellation: true
@@ -110,6 +111,22 @@ var TwitterBot = function (options)
                 job.cancel();
             });
         });
+    };
+
+    /*
+     * [TwitterBot].repeat
+     *
+     * Fires the given action repeatedly based on the interation time.
+     *
+     * @param action function
+     * @param iteration int
+     * @return Promise
+     */
+    this.repeat = function (action, iteration)
+    {
+        var handler = Interval(action, iteration);
+
+        return handler;
     };
 };
 

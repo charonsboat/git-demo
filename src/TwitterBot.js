@@ -13,7 +13,7 @@ var TwitterBot = function (options)
     var twit = new Twit(options);
 
     /*
-     * [TwitterBot].tweet
+     * [TwitterBot].tweet()
      *
      * Tweets the passed message.
      *
@@ -28,7 +28,7 @@ var TwitterBot = function (options)
     };
 
     /*
-     * [TwitterBot].getTweet
+     * [TwitterBot].getTweet()
      *
      * Reads a Tweet with the given id if it exists.
      *
@@ -43,7 +43,7 @@ var TwitterBot = function (options)
     };
 
     /*
-     * [TwitterBot].removeTweet
+     * [TwitterBot].removeTweet()
      *
      * Removes a Tweet with the given id if it exists.
      *
@@ -58,7 +58,7 @@ var TwitterBot = function (options)
     };
 
     /*
-     * [TwitterBot].retweet
+     * [TwitterBot].retweet()
      *
      * Retweets a Tweet with the given id if it hasn't already been retweeted.
      *
@@ -73,7 +73,7 @@ var TwitterBot = function (options)
     };
 
     /*
-     * [TwitterBot].undoRetweet
+     * [TwitterBot].undoRetweet()
      *
      * Removes the Retweet based on the given Tweet id. Accepts either the
      * Retweet id or the original Tweet id.
@@ -89,7 +89,7 @@ var TwitterBot = function (options)
     };
 
     /*
-     * [TwitterBot].getMentions
+     * [TwitterBot].getMentions()
      *
      * Returns the 20 most recent mentions (tweets containing a users’s
      * @screen_name) for the authenticated user.
@@ -104,7 +104,7 @@ var TwitterBot = function (options)
     };
 
     /*
-     * [TwitterBot].schedule
+     * [TwitterBot].schedule()
      *
      * Fires the given action on the given schedule/date/time.
      *
@@ -129,7 +129,7 @@ var TwitterBot = function (options)
     };
 
     /*
-     * [TwitterBot].repeat
+     * [TwitterBot].repeat()
      *
      * Fires the given action repeatedly based on the interation time.
      *

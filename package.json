@@ -1,6 +1,6 @@
 {
   "name": "@drm2/twitterbot",
-  "version": "v0.0.3",
+  "version": "v0.0.4",
   "description": "A JavaScript/Node framework for building better Twitter bots. Built on Twit with full Promise support.",
   "main": "src/TwitterBot.js",
   "dependencies": {

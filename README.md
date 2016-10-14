@@ -202,6 +202,35 @@ Twitter
 
 - [POST statuses/unretweet/:id](https://dev.twitter.com/rest/reference/post/statuses/unretweet/%3Aid)
 
+### `[TwitterBot].getMentions()`
+
+Returns the 20 most recent mentions for the authenticated user.
+
+#### Example
+
+```javascript
+bot.getMentions()
+    .catch(function (error) {
+        console.log('Error:', error);
+    })
+    .then(function (result) {
+        // loop through the results and log the actual Mention messages
+        result.data.forEach(function (mention) {
+            console.log(mention.text)
+        });
+    });
+```
+
+#### References
+
+Twit
+
+- [Twit.get()](https://github.com/ttezel/twit/blob/master/README.md#tgetpath-params-callback)
+
+Twitter
+
+- [GET statuses/mentions_timeline](https://dev.twitter.com/rest/reference/get/statuses/mentions_timeline)
+
 ### `[TwitterBot].schedule(action, schedule)`
 
 Runs the given action(s) based on the given schedule.

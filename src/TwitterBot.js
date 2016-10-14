@@ -89,6 +89,21 @@ var TwitterBot = function (options)
     };
 
     /*
+     * [TwitterBot].getMentions
+     *
+     * Returns the 20 most recent mentions (tweets containing a users’s
+     * @screen_name) for the authenticated user.
+     *
+     * @return Promise
+     */
+    this.getMentions = function ()
+    {
+        var promise = twit.get('statuses/mentions_timeline');
+
+        return promise;
+    };
+
+    /*
      * [TwitterBot].schedule
      *
      * Fires the given action on the given schedule/date/time.

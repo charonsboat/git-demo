@@ -58,6 +58,25 @@ var TwitterBot = function (options)
     };
 
     /*
+     * [TwitterBot].reply()
+     *
+     * Posts a tweet as a reply to the supplied User/Tweet.
+     *
+     * @param message string
+     * @param options object { screen_name, tweet_id }
+     * @return Promise
+     */
+    this.reply = function (message, options)
+    {
+        // prepend reply_to screen name to reply body (required by Twitter API)
+        message = '@' + options.screen_name + ' ' + message;
+
+        var promise = twit.post('statuses/update', { status: message, in_reply_to_status_id: options.tweet_id });
+
+        return promise;
+    };
+
+    /*
      * [TwitterBot].retweet()
      *
      * Retweets a Tweet with the given id if it hasn't already been retweeted.

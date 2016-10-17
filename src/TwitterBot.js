@@ -104,6 +104,29 @@ var TwitterBot = function (options)
     };
 
     /*
+     * [TwitterBot].filteredStream()
+     *
+     * Returns public statuses that match one or more filter predicates.
+     *
+     * @param params string|array|object
+     * @return Twit Stream Object
+     */
+    this.filteredStream = function (params)
+    {
+        // if the argument is a string or an array, the user is just using shorthand for setting the track
+        if (typeof params === 'string' || typeof params === 'array')
+        {
+            params = {
+                track: params
+            };
+        }
+
+        var stream = twit.stream('statuses/filter', params);
+
+        return stream;
+    }
+
+    /*
      * [TwitterBot].schedule()
      *
      * Fires the given action on the given schedule/date/time.

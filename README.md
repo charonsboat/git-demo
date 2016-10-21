@@ -316,6 +316,47 @@ Twitter
 
 - [GET statuses/mentions_timeline](https://dev.twitter.com/rest/reference/get/statuses/mentions_timeline)
 
+### `[TwitterBot].filteredStream(options)`
+
+Returns public statuses that match one or more filter predicates.
+
+#### options: object|array|string
+
+If the parameter passed is of type `object`, the User is supplying multiple parameters to the statuses/filter Streaming API. If it is of type `array` or `string`, the User is using shorthand to just pass the `track` parameter to the API. For more information, view the references below.
+
+#### Example
+
+```javascript
+// passing multiple params
+var options = { track: '#bots', stall_warnings: true };
+
+// or
+
+// using the shorthand method
+var options = '#bots';
+```
+
+```javascript
+// initiate the stream listener
+var stream = bot.filteredStream(options);
+
+// now we can listen for any events emitted by Twit (see references below)
+stream.on('tweet', function (tweet) {
+    console.log('New Tweet:', tweet.text);
+});
+```
+
+#### References
+
+Twit
+
+- [Twit.stream()](https://github.com/ttezel/twit#tstreampath-params)
+- [Streaming API Docs](https://github.com/ttezel/twit#using-the-streaming-api)
+
+Twitter
+
+- [POST statuses/filter](https://dev.twitter.com/streaming/reference/post/statuses/filter)
+
 ### `[TwitterBot].schedule(action, schedule)`
 
 Runs the given action(s) based on the given schedule.

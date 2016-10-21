@@ -60,7 +60,7 @@ var TwitterBot = function (options)
     /*
      * [TwitterBot].reply()
      *
-     * Posts a tweet as a reply to the supplied User/Tweet.
+     * Posts a Tweet as a reply to the supplied User/Tweet.
      *
      * @param message string
      * @param options object { screen_name, tweet_id }

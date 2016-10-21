@@ -140,6 +140,46 @@ Twitter
 
 - [POST statuses/destroy/:id](https://dev.twitter.com/rest/reference/post/statuses/destroy/%3Aid)
 
+### `[TwitterBot].reply(message, options)`
+
+Posts a Tweet as a reply to the supplied User/Tweet.
+
+#### message: string
+
+The message you want to send.
+
+#### options: object
+
+An object containing both the screen_name and the tweet_id of the respective User and Tweet you want to reply to.
+
+#### Example
+
+```javascript
+var options = {
+    screen_name: 'drmyersii',
+    tweet_id: '787053538962706432'
+};
+
+bot.reply('Hi David! This is a test.', options)
+    .catch(function (error) {
+        console.log('Error:', error);
+    })
+    .then(function (result) {
+        console.log('Data:', result.data);
+        console.log('Response:', result.resp);
+    });
+```
+
+#### References
+
+Twit
+
+- [Twit.post()](https://github.com/ttezel/twit/blob/master/README.md#tpostpath-params-callback)
+
+Twitter
+
+- [POST statuses/update](https://dev.twitter.com/rest/reference/post/statuses/update) (specifically the `in_reply_to_status_id` parameter)
+
 ### `[TwitterBot].retweet(id)`
 
 Retweets a Tweet with the given id.

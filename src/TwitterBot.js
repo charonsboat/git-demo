@@ -108,6 +108,25 @@ var TwitterBot = function (options)
     };
 
     /*
+     * [TwitterBot].message()
+     *
+     * Sends a new direct message to the specified user from the authenticated
+     * user.
+     *
+     * @param message string
+     * @param options object { screen_name } or { user_id }
+     * @return Promise
+     */
+    this.message = function (message, options)
+    {
+        var params = Object.assign({ text: message }, options);
+
+        var promise = twit.post('direct_messages/new', params);
+
+        return promise;
+    };
+
+    /*
      * [TwitterBot].getMentions()
      *
      * Returns the 20 most recent mentions (tweets containing a users’s

@@ -202,6 +202,51 @@ Twitter
 
 - [POST statuses/unretweet/:id](https://dev.twitter.com/rest/reference/post/statuses/unretweet/%3Aid)
 
+### `[TwitterBot].message(message, options)`
+
+Sends a new DM (direct message) to the specified User from the authenticated User.
+
+#### message: string
+
+The message you want to send.
+
+#### options: object
+
+An object containing either the screen_name or the user_id of the User you want to message.
+
+#### Example
+
+```javascript
+// with screen_name
+var options = { screen_name: 'drmyersii' };
+
+// or
+
+// with user_id
+var options = { user_id: '286856718' };
+```
+
+```javascript
+bot.message('Hello, World!', options)
+    .catch(function (error) {
+        console.log('Error:', error);
+    })
+    .then(function (result) {
+        console.log('Data:', result.data);
+        console.log('Response:', result.resp);
+    });
+```
+
+#### References
+
+Twit
+
+- [Twit.post()](https://github.com/ttezel/twit/blob/master/README.md#tpostpath-params-callback)
+
+Twitter
+
+- [POST direct_messages/new](https://dev.twitter.com/rest/reference/post/direct_messages/new)
+
 ### `[TwitterBot].getMentions()`
 
 Returns the 20 most recent mentions for the authenticated user.
